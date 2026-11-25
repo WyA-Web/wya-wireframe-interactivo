@@ -1,5 +1,4 @@
 /* Wireframe Mid-Fi · Grupo WYA · sin librerías */
-const RULETA_MS = 2800;   // tiempo de cada problema
 const CASCADA_MS = 80;    // desfase entre elementos de un grupo
 
 (() => {
@@ -78,38 +77,6 @@ const CASCADA_MS = 80;    // desfase entre elementos de un grupo
   // Si el foco llega a algo que aún no entró, se muestra de inmediato
   document.addEventListener('focusin', e => { const el = e.target.closest('.rv'); if (el) el.classList.add('is-in'); });
   requestAnimationFrame(() => requestAnimationFrame(() => $('.portada').classList.add('is-loaded')));
-
-  /* ---- Ruleta de problemas ---- */
-  const rul = $('[data-ruleta]');
-  const items = $$('li', rul);
-  const pausaBtn = $('[data-pausa]');
-  const pausas = { usuario: false, mouse: false, foco: false, pestana: document.hidden, fuera: true };
-  let i = 0, reloj = 0;
-  const avanzar = () => {
-    items.forEach(li => li.classList.remove('is-out'));
-    items[i].classList.replace('is-on', 'is-out');
-    i = (i + 1) % items.length;
-    items[i].classList.add('is-on');
-  };
-  const sincronizar = () => {
-    const corre = !reduce.matches && !Object.values(pausas).some(Boolean);
-    if (corre && !reloj) reloj = setInterval(avanzar, RULETA_MS);
-    if (!corre && reloj) { clearInterval(reloj); reloj = 0; }
-  };
-  const pausar = (k, v) => { pausas[k] = v; sincronizar(); };
-  pausaBtn.addEventListener('click', () => {
-    pausar('usuario', !pausas.usuario);
-    rul.classList.toggle('is-paused', pausas.usuario);
-    pausaBtn.setAttribute('aria-label', (pausas.usuario ? 'Reanudar' : 'Pausar') + ' la rotación de problemas');
-  });
-  rul.addEventListener('mouseenter', () => pausar('mouse', true));
-  rul.addEventListener('mouseleave', () => pausar('mouse', false));
-  rul.addEventListener('focusin', e => pausar('foco', e.target.matches(':focus-visible')));
-  rul.addEventListener('focusout', () => pausar('foco', false));
-  document.addEventListener('visibilitychange', () => pausar('pestana', document.hidden));
-  reduce.addEventListener('change', sincronizar);
-  if ('IntersectionObserver' in window) new IntersectionObserver(es => pausar('fuera', !es[es.length - 1].isIntersecting)).observe(rul);
-  else pausar('fuera', false);
 
   /* ---- Video y destinos por definir ---- */
   const msg = $('[data-video-msg]');

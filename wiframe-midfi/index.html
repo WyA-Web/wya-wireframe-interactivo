@@ -34,15 +34,16 @@
       <div class="menu" id="menu" data-menu>
         <nav class="nav" aria-label="Principal">
           <div class="drop" data-drop>
-            <button class="nav__link" type="button" aria-expanded="false" aria-controls="sub-soluciones">Soluciones
+            <button class="nav__link" type="button" aria-expanded="false" aria-controls="sub-servicios">Servicios
               <svg class="chev" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </button>
-            <ul class="drop__panel" id="sub-soluciones">
-              <li><a href="#soluciones">Software a medida</a></li>
-              <li><a href="#soluciones">Datos e Inteligencia Artificial</a></li>
-              <li><a href="#soluciones">Ventas y Atención al Cliente</a></li>
-              <li><a href="#soluciones">Continuidad y Conectividad</a></li>
-            </ul>
+            <!-- Los 11 servicios, agrupados en 4 categorías. Cada servicio llevará a su página (por definir) -->
+            <div class="drop__panel drop__panel--serv" id="sub-servicios">
+              <div class="drop__grupo"><p class="drop__cat" id="dc-software">Software a medida</p><ul aria-labelledby="dc-software"><li><a href="#s-software">Sistemas multiplataforma</a></li><li><a href="#s-software">Gestión de proyectos TI</a></li><li><a href="#s-software">Arquitectura empresarial</a></li></ul></div>
+              <div class="drop__grupo"><p class="drop__cat" id="dc-datos">Datos e Inteligencia Artificial</p><ul aria-labelledby="dc-datos"><li><a href="#s-datos">Business Intelligence</a></li><li><a href="#s-datos">Optimización operacional con IA</a></li><li><a href="#s-datos">Enriquecimiento de bases de datos</a></li></ul></div>
+              <div class="drop__grupo"><p class="drop__cat" id="dc-ventas">Ventas y Atención al Cliente</p><ul aria-labelledby="dc-ventas"><li><a href="#s-ventas">Asesoría de ventas</a></li><li><a href="#s-ventas">Central telefónica Vicidial</a></li></ul></div>
+              <div class="drop__grupo"><p class="drop__cat" id="dc-continuidad">Continuidad y Conectividad</p><ul aria-labelledby="dc-continuidad"><li><a href="#s-continuidad">Continuidad del negocio</a></li><li><a href="#s-continuidad">Telefonía VoIP</a></li><li><a href="#s-continuidad">Correo corporativo Zimbra</a></li></ul></div>
+            </div>
           </div>
           <div class="drop" data-drop>
             <button class="nav__link" type="button" aria-expanded="false" aria-controls="sub-productos">Productos
@@ -68,7 +69,7 @@
 
   <main id="contenido" tabindex="-1">
 
-    <!-- 1.1 HERO (99:2378). La imagen cubre el hero y el inicio de Soluciones -->
+    <!-- 1.1 HERO (99:2378). La imagen cubre el hero y el inicio de Servicios -->
     <div class="portada">
     <img class="portada__img" src="assets/img/hero.jpg" width="1920" height="1080" alt="" fetchpriority="high">
     <section class="hero" id="inicio" aria-labelledby="t-hero">
@@ -77,40 +78,28 @@
           <h1 class="display" id="t-hero"><span class="line"><span>Tecnología que </span></span><span class="line"><span>ordena tu operación.</span></span></h1>
           <div class="btns hero__btns">
             <a class="btn" href="#contacto">Conversemos</a>
-            <a class="btn btn--line" href="#soluciones">Ver soluciones</a>
+            <a class="btn btn--line" href="#servicios">Ver servicios</a>
           </div>
         </div>
         <p class="body-l hero__sub">Desarrollamos sistemas, datos e inteligencia artificial que hacen crecer tus ventas, desde el primer contacto con tu cliente hasta el reporte que usas para decidir.</p>
       </div>
     </section>
 
-    <!-- 1.2 SOLUCIONES (99:2407, 99:2422, 99:2410 a 99:2419) -->
-    <section class="sol" id="soluciones" aria-labelledby="t-sol">
+    <!-- 1.2 SERVICIOS (135:2525, 135:2460, 135:2461 a 135:2508). Antes «Soluciones»: cada tarjeta es una categoría con sus servicios -->
+    <section class="sol" id="servicios" aria-labelledby="t-sol">
       <div class="wrap">
         <div class="sol__row">
-          <!-- RULETA: los 5 problemas, de Estructura web WYA.md 1.2 -->
-          <div class="rul" data-ruleta>
-            <svg class="rul__chev" viewBox="0 0 10 17" width="10" height="17" aria-hidden="true"><path d="M1.2 1.2 8.8 8.5l-7.6 7.3"/></svg>
-            <ul class="rul__list body-l">
-              <li class="is-on">Clientes interesados que nadie vuelve a llamar.</li>
-              <li>WhatsApp desordenado, sin historial ni seguimiento.</li>
-              <li>Pedidos e inventario controlados en Excel.</li>
-              <li>Reportes que llegan tarde o no cuadran.</li>
-              <li>Sistemas sueltos que no se comunican entre sí.</li>
-            </ul>
-            <button class="rul__btn" type="button" aria-label="Pausar la rotación de problemas" data-pausa>
-              <svg class="i-pausa" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
-              <svg class="i-sigue" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 5l11 7-11 7z"/></svg>
-            </button>
-          </div>
-          <h2 class="h2" id="t-sol">¿Te suena familiar?</h2>
+          <!-- Título a la izquierda y bajada a la derecha (135:2525, 135:2460).
+               Los 5 problemas de la antigua ruleta pasan a la página Servicios (2.0.2) -->
+          <h2 class="h2" id="t-sol">Nuestros servicios</h2>
+          <p class="rul body-l"><svg class="rul__chev" viewBox="0 0 10 17" width="10" height="17" aria-hidden="true"><path d="M1.2 1.2 8.8 8.5l-7.6 7.3"/></svg><span>Desde la venta hasta el reporte final, trabajamos contigo en cuatro frentes.</span></p>
         </div>
 
         <ul class="sol__cards">
-          <li class="scard rv"><div class="scard__in"><h3 class="h4" style="max-width:160px">Software a medida</h3><p>Sistemas web, de escritorio y móviles construidos para tu forma de trabajar.</p><div class="scard__foto"><img src="assets/img/sol1.jpg" width="648" height="650" alt=""></div></div></li>
-          <li class="scard scard--morado rv"><div class="scard__in"><h3 class="h4">Datos e Inteligencia Artificial</h3><p>Convertimos tus datos en reportes claros y automatizamos tareas con inteligencia artificial.</p><div class="scard__foto"><img src="assets/img/sol2.jpg" width="648" height="650" alt=""></div></div></li>
-          <li class="scard scard--gris rv"><div class="scard__in"><h3 class="h4">Ventas y Atención al Cliente</h3><p>Contact center, WhatsApp y agentes de IA conectados en un solo lugar.</p><div class="scard__foto"><img src="assets/img/sol3.jpg" width="648" height="650" alt=""></div></div></li>
-          <li class="scard rv"><div class="scard__in"><h3 class="h4">Continuidad y Conectividad</h3><p>Planes de contingencia, fibra óptica, telefonía VoIP y correo corporativo.</p><div class="scard__foto"><img src="assets/img/sol4.jpg" width="648" height="650" alt=""></div></div></li>
+          <li id="s-software" class="scard rv"><div class="scard__in"><h3 class="h4" style="max-width:160px">Software a medida</h3><ul class="scard__lista" aria-label="Servicios de Software a medida"><li><a href="#" data-pendiente>Sistemas multiplataforma<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg></a></li><li><a href="#" data-pendiente>Gestión de proyectos TI<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg></a></li><li><a href="#" data-pendiente>Arquitectura empresarial<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg></a></li></ul><div class="scard__foto"><img src="assets/img/sol1.jpg" width="648" height="650" alt=""></div></div></li>
+          <li id="s-datos" class="scard scard--morado rv"><div class="scard__in"><h3 class="h4">Business<br>Intelligence</h3><ul class="scard__lista" aria-label="Servicios de Business Intelligence"><li><a href="#" data-pendiente>Optimización operacional con IA<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg></a></li><li><a href="#" data-pendiente>Enriquecimiento de bases de datos<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg></a></li></ul><div class="scard__foto"><img src="assets/img/sol2.jpg" width="648" height="650" alt=""></div></div></li>
+          <li id="s-ventas" class="scard scard--gris rv"><div class="scard__in"><h3 class="h4">Ventas y Atención al Cliente</h3><ul class="scard__lista" aria-label="Servicios de Ventas y Atención al Cliente"><li><a href="#" data-pendiente>Asesoría de ventas<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg></a></li><li><a href="#" data-pendiente>Central telefónica Vicidial<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg></a></li></ul><div class="scard__foto"><img src="assets/img/sol3.jpg" width="648" height="650" alt=""></div></div></li>
+          <li id="s-continuidad" class="scard rv"><div class="scard__in"><h3 class="h4">Continuidad y Conectividad</h3><ul class="scard__lista" aria-label="Servicios de Continuidad y Conectividad"><li><a href="#" data-pendiente>Continuidad del negocio<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg></a></li><li><a href="#" data-pendiente>Telefonía VoIP<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg></a></li><li><a href="#" data-pendiente>Correo corporativo Zimbra<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg></a></li></ul><div class="scard__foto"><img src="assets/img/sol4.jpg" width="648" height="650" alt=""></div></div></li>
         </ul>
       </div>
     </section>
@@ -215,8 +204,8 @@
     <div class="wrap">
       <div class="footer__cols rv">
         <div><p class="h4 footer__logo">Grupo WYA</p><p>Tecnología que ordena tu operación.</p></div>
-        <nav aria-labelledby="f1"><h2 class="over" id="f1">Soluciones</h2><ul>
-          <li><a href="#soluciones">Software a medida</a></li><li><a href="#soluciones">Datos e Inteligencia Artificial</a></li><li><a href="#soluciones">Ventas y Atención al Cliente</a></li><li><a href="#soluciones">Continuidad y Conectividad</a></li></ul></nav>
+        <nav aria-labelledby="f1"><h2 class="over" id="f1">Servicios</h2><ul>
+          <li><a href="#s-software">Software a medida</a></li><li><a href="#s-datos">Datos e Inteligencia Artificial</a></li><li><a href="#s-ventas">Ventas y Atención al Cliente</a></li><li><a href="#s-continuidad">Continuidad y Conectividad</a></li></ul></nav>
         <nav aria-labelledby="f2"><h2 class="over" id="f2">Productos</h2><ul>
           <li><a href="#p-datascan">Datascan</a></li><li><a href="#p-comercial">WYA Comercial</a></li><li><a href="#p-pedidos">WYA Pedidos y Punto de Venta</a></li><li><a href="#p-educacion">WYA Educación</a></li></ul></nav>
         <nav aria-labelledby="f3"><h2 class="over" id="f3">Empresa</h2><ul>
